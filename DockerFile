@@ -1,0 +1,5 @@
+FROM openjdk:8-jdk-alpine
+VOLUME /ipo-service
+ADD /target/smc-ms-ipo-1.0.0-SNAPSHOT.jar ipo-svc.jar
+EXPOSE 8005
+ENTRYPOINT ["java", "-Dspring.profiles.active=dev", "-jar", "ipo-svc.jar"]
